@@ -13,12 +13,14 @@ namespace SeleniumTest
     {
         public GetCurrentURL()
         {
+
         }
-        public void GetAllLinks(IWebDriver driver)
+        public void GetAllLinks()
         {
+            IWebDriver driver = new ChromeDriver();
 
             driver.Navigate().GoToUrl("https://testguild.com/HpSupport.html");
-            driver.Manage().Window.Maximize();
+            driver.Manage().Window.Minimize();
 
             IList<IWebElement> allLinks = driver.FindElements(By.TagName("a"));
 
@@ -27,7 +29,7 @@ namespace SeleniumTest
                 Console.WriteLine(link.Text + " - " + link.GetAttribute("href"));
                 Console.ReadKey();
             }
-            driver.Quit();
+            driver.Close();
 
         }
     }

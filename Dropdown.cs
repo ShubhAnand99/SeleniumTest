@@ -13,19 +13,21 @@ namespace SeleniumTest
 {
     class Dropdown
     {
-        public void dropdowntest(IWebDriver driver)
+        public void dropdowntest()
         {
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
+            IWebDriver driver = new ChromeDriver();
 
-            driver.Url = "https://tooslqa.com/automation-practice-form";
+            driver.Manage().Timeouts().ImplicitWait =TimeSpan.FromSeconds(10);
 
-            SelectElement oSelection = new SelectElement(driver.FindElement(By.Id("continents")));
+            driver.Url = "https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html";
 
-            oSelection.SelectByText("Europe");
+            SelectElement oSelection = new SelectElement(driver.FindElement(By.Id("select-demo")));
+
+            oSelection.SelectByText("Sunday");
 
             Thread.Sleep(2000);
 
-            oSelection.SelectByIndex(2);
+            oSelection.SelectByIndex(3);
 
             Thread.Sleep(2000);
 
@@ -39,7 +41,7 @@ namespace SeleniumTest
 
                 Console.WriteLine("Value of the Selection" + svalue);
 
-                if(svalue.Equals("Africa"))
+                if(svalue.Equals("Friday"))
                 {
                     oSelection.SelectByIndex(i);
                     break;
