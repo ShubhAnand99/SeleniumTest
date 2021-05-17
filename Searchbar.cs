@@ -11,7 +11,7 @@ namespace SeleniumTest
 {
     class Searchbar
     {
-        public void Search()
+        public IWebDriver Search()
         {
             IWebDriver driver = new ChromeDriver();
             driver.Url = "https://www.seleniumeasy.com/test/table-search-filter-demo.html";
@@ -19,7 +19,9 @@ namespace SeleniumTest
             String searchtext = driver.Url;
             driver.FindElement(By.Id("task-table-filter")).SendKeys(searchtext + Keys.Enter);
             Thread.Sleep(2000);
+            
             driver.Close();
+            return (driver);
         }
     }
 
