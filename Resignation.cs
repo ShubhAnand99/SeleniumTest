@@ -54,7 +54,7 @@ namespace SeleniumTest
 
             driver.FindElement(By.XPath("//*[@id='_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:0:r1:0:up1Upl:UPsp1:gpRgn:0:GPmtfr0:0:sis2:aridis::item4']/td/div")).Click();
             Thread.Sleep(10000);
-            driver.FindElement(By.ClassName("")).Click();
+            driver.FindElement(By.ClassName("abc")).Click();
             Thread.Sleep(10000);
 
             driver.Quit();
